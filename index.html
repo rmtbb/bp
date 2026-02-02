@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    ██████╗  █████╗ ██████╗ ██╗  ██╗██╗███╗   ██╗ ██████╗
+    ██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝██║████╗  ██║██╔════╝
+    ██████╔╝███████║██████╔╝█████╔╝ ██║██╔██╗ ██║██║  ███╗
+    ██╔══██╗██╔══██║██╔══██╗██╔═██╗ ██║██║╚██╗██║██║   ██║
+    ██████╔╝██║  ██║██║  ██║██║  ██╗██║██║ ╚████║╚██████╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
+
+    ██████╗ ██╗   ██╗██████╗ ██████╗ ██╗   ██╗
+    ██╔══██╗██║   ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
+    ██████╔╝██║   ██║██████╔╝██████╔╝ ╚████╔╝
+    ██╔═══╝ ██║   ██║██╔═══╝ ██╔═══╝   ╚██╔╝
+    ██║     ╚██████╔╝██║     ██║        ██║
+    ╚═╝      ╚═════╝ ╚═╝     ╚═╝        ╚═╝
+
+    You found the first one. Keep looking.
+
+    01001000 01000101 00100000
+    01001001 01010011 00100000
+    01001110 01001111 01010100 00100000
+    01000001 00100000
+    01000011 01000001 01010100
+
+    The cat became a dog. The dog will become legend.
+
+    Coordinates: 42.3601° N, 71.0589° W
+    (You know where this is.)
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="There are no coincidences.">
+    <meta name="keywords" content="PUPPY, Barking, Roaring, Kitty, GME, Diamond, Hands">
+    <!-- 01.28.2021 - Never Forget -->
+    <title>$BP | Barking Puppy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+        /*
+            CSS Variable names contain a hidden message.
+            First letter of each: T H E R E T R U T H I S H I D D E N
+        */
+        :root {
+            --terminal-red: #ff2a2a;
+            --highlight-gold: #ffd700;
+            --electric-green: #00ff41;
+            --retro-cyan: #00ffff;
+            --eerie-purple: #9d00ff;
+            --total-black: #000000;
+            --rich-dark: #0a0a0a;
+            --ultra-dark: #050505;
+            --tint-gray: #1a1a1a;
+            --hidden-gray: #111;
+            --ink-shadow: rgba(0,0,0,0.8);
+            --scanner-line: rgba(0,255,65,0.1);
+            --haze-red: rgba(255,42,42,0.1);
+            --invisible-glow: rgba(255,215,0,0.3);
+            --deep-void: #030303;
+            --dim-text: #666;
+            --echo-text: #888;
+            --noise-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: var(--deep-void);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        /* Scan line effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0,0,0,0) 0px,
+                rgba(0,0,0,0) 1px,
+                rgba(0,0,0,0.03) 1px,
+                rgba(0,0,0,0.03) 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* CRT flicker */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--noise-overlay);
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 9998;
+            animation: noise 0.2s infinite;
+        }
+
+        @keyframes noise {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-1%, -1%); }
+            20% { transform: translate(1%, 1%); }
+            30% { transform: translate(-1%, 1%); }
+            40% { transform: translate(1%, -1%); }
+            50% { transform: translate(-1%, 0); }
+            60% { transform: translate(1%, 0); }
+            70% { transform: translate(0, 1%); }
+            80% { transform: translate(0, -1%); }
+            90% { transform: translate(1%, 1%); }
+        }
+
+        /* Animated grid background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(90deg, rgba(255,42,42,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,42,42,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridMove 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--terminal-red);
+            border-radius: 50%;
+            animation: float 15s infinite;
+            opacity: 0.5;
+        }
+
+        .particle:nth-child(odd) { background: var(--highlight-gold); }
+        .particle:nth-child(3n) { background: var(--electric-green); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Red string conspiracy web */
+        .conspiracy-web {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.08;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,42,42,0.2);
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            position: relative;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, var(--highlight-gold), var(--terminal-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255,215,0,0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255,42,42,0.8)); }
+        }
+
+        .logo-sub {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--dim-text);
+            letter-spacing: 2px;
+            margin-top: 5px;
+            /* Hover to reveal */
+        }
+
+        .logo-sub::after {
+            content: ' [CLICK]';
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover .logo-sub::after {
+            opacity: 1;
+            color: var(--electric-green);
+        }
+
+        /* Secret message in logo - click to reveal */
+        .logo-secret {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            font-size: 0.7rem;
+            color: var(--electric-green);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            font-family: 'Share Tech Mono', monospace;
+            white-space: nowrap;
+        }
+
+        .logo.clicked .logo-secret {
+            opacity: 1;
+            transform: translateY(5px);
+        }
+
+        /* Wallet button */
+        #connect-btn {
+            background: linear-gradient(135deg, var(--terminal-red), #990000);
+            border: 1px solid var(--terminal-red);
+            color: white;
+            padding: 14px 28px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #connect-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        #connect-btn:hover::before {
+            left: 100%;
+        }
+
+        #connect-btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 10px 40px rgba(255,42,42,0.4),
+                0 0 0 1px var(--terminal-red),
+                inset 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        #connect-btn.connected {
+            background: linear-gradient(135deg, var(--electric-green), #009900);
+            border-color: var(--electric-green);
+        }
+
+        #connect-btn.connected:hover {
+            box-shadow: 0 10px 40px rgba(0,255,65,0.4);
+        }
+
+        /* Status bar */
+        .status-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--tint-gray);
+            border-radius: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.red { background: var(--terminal-red); }
+        .status-dot.green { background: var(--electric-green); }
+        .status-dot.gold { background: var(--highlight-gold); }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* Gate screen */
+        #gate-screen {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        /* Glitch effect for classified stamp */
+        .classified-container {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .classified-stamp {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--terminal-red);
+            border: 6px solid var(--terminal-red);
+            padding: 15px 50px;
+            transform: rotate(-3deg);
+            position: relative;
+            text-shadow:
+                0 0 10px var(--terminal-red),
+                0 0 20px var(--terminal-red),
+                0 0 40px var(--terminal-red);
+            animation: glitch 5s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: rotate(-3deg) translate(0); }
+            91% { transform: rotate(-3deg) translate(-2px, 1px); }
+            92% { transform: rotate(-3deg) translate(2px, -1px); }
+            93% { transform: rotate(-3deg) translate(-1px, 2px); }
+            94% { transform: rotate(-3deg) translate(1px, -2px); }
+        }
+
+        .classified-stamp::before,
+        .classified-stamp::after {
+            content: 'CLASSIFIED';
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            right: 50px;
+        }
+
+        .classified-stamp::before {
+            color: var(--retro-cyan);
+            animation: glitchTop 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .classified-stamp::after {
+            color: var(--terminal-red);
+            animation: glitchBottom 2s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitchTop {
+            0%, 95%, 100% { transform: translate(0); }
+            96% { transform: translate(-3px, 0); }
+            97% { transform: translate(3px, 0); }
+        }
+
+        @keyframes glitchBottom {
+            0%, 93%, 100% { transform: translate(0); }
+            94% { transform: translate(3px, 0); }
+            95% { transform: translate(-3px, 0); }
+        }
+
+        .gate-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--highlight-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+        }
+
+        .gate-subtitle {
+            font-size: 1rem;
+            color: var(--echo-text);
+            max-width: 650px;
+            line-height: 2;
+            margin-bottom: 40px;
+        }
+
+        /* Hidden message - select text to reveal */
+        .gate-subtitle::selection {
+            background: var(--terminal-red);
+            color: white;
+        }
+
+        /* Cipher text that decodes on hover */
+        .cipher-text {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--dim-text);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin: 30px 0;
+            transition: all 0.5s;
+            cursor: help;
+        }
+
+        .cipher-text:hover {
+            letter-spacing: 1px;
+            color: var(--electric-green);
+        }
+
+        .cipher-text:hover::after {
+            content: ' → "HE IS NOT A CAT"';
+            color: var(--highlight-gold);
+        }
+
+        /* Token requirement card */
+        .requirement-card {
+            background: linear-gradient(135deg, rgba(255,42,42,0.1), rgba(255,215,0,0.05));
+            border: 1px solid var(--terminal-red);
+            padding: 40px 60px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--terminal-red), transparent);
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .requirement-label {
+            color: var(--echo-text);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .contract-address {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--electric-green);
+            font-size: 0.75rem;
+            word-break: break-all;
+            padding: 15px;
+            background: rgba(0,255,65,0.05);
+            border-radius: 6px;
+            border: 1px solid rgba(0,255,65,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contract-address:hover {
+            background: rgba(0,255,65,0.1);
+            border-color: var(--electric-green);
+        }
+
+        .min-amount {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--highlight-gold);
+            margin-top: 20px;
+            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+        }
+
+        /* Arrow hint */
+        .arrow-hint {
+            margin-top: 50px;
+            color: var(--terminal-red);
+            font-size: 0.8rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Status messages */
+        #status {
+            text-align: center;
+            padding: 15px 30px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 600px;
+            display: none;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        #status.error {
+            display: block;
+            background: rgba(255,42,42,0.1);
+            border: 1px solid var(--terminal-red);
+            color: var(--terminal-red);
+        }
+
+        #status.success {
+            display: block;
+            background: rgba(0,255,65,0.1);
+            border: 1px solid var(--electric-green);
+            color: var(--electric-green);
+        }
+
+        /* ========== GATED CONTENT ========== */
+        #gated-content {
+            display: none;
+            padding: 40px 0;
+        }
+
+        #gated-content.visible {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Welcome banner */
+        .welcome-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(180deg, rgba(255,215,0,0.05), transparent);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-section::before {
+            content: '🐕';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.03;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .welcome-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--highlight-gold), var(--terminal-red), var(--highlight-gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .balance-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--electric-green);
+        }
+
+        .access-level {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--echo-text);
+        }
+
+        .access-level span {
+            color: var(--highlight-gold);
+            font-weight: bold;
+        }
+
+        /* Quote section */
+        .quote-section {
+            text-align: center;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 3px solid var(--terminal-red);
+            border-right: 3px solid var(--terminal-red);
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--echo-text);
+            line-height: 1.8;
+        }
+
+        .quote-text span {
+            color: var(--highlight-gold);
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            color: var(--dim-text);
+            font-size: 0.9rem;
+        }
+
+        /* Evidence board */
+        .evidence-board {
+            background: var(--hidden-gray);
+            border: 2px solid var(--tint-gray);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .evidence-board::before {
+            content: 'TOP SECRET';
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: var(--terminal-red);
+            color: white;
+            padding: 4px 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 4px;
+        }
+
+        .board-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--tint-gray);
+        }
+
+        .board-icon {
+            font-size: 2rem;
+        }
+
+        .board-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--highlight-gold);
+            letter-spacing: 2px;
+        }
+
+        .board-subtitle {
+            font-size: 0.8rem;
+            color: var(--dim-text);
+            margin-top: 5px;
+        }
+
+        /* Evidence cards */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .evidence-card {
+            background: linear-gradient(135deg, rgba(255,42,42,0.05), rgba(0,0,0,0.3));
+            border: 1px solid rgba(255,42,42,0.2);
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .evidence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255,42,42,0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .evidence-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--terminal-red);
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.4),
+                0 0 30px rgba(255,42,42,0.1);
+        }
+
+        .evidence-card:hover::before {
+            opacity: 1;
+        }
+
+        .evidence-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            color: var(--terminal-red);
+            opacity: 0.5;
+        }
+
+        .evidence-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--highlight-gold);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .evidence-card p {
+            color: var(--echo-text);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .evidence-date {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 12px;
+            background: rgba(0,255,65,0.1);
+            border: 1px solid rgba(0,255,65,0.3);
+            border-radius: 20px;
+            color: var(--electric-green);
+            font-size: 0.7rem;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        /* Connection lines between evidence */
+        .evidence-card[data-connects]::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            color: var(--terminal-red);
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--terminal-red), var(--highlight-gold), var(--electric-green));
+        }
+
+        .timeline-item {
+            padding-left: 80px;
+            margin-bottom: 40px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 21px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--deep-void);
+            border: 2px solid var(--terminal-red);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--terminal-red);
+            box-shadow: 0 0 20px var(--terminal-red);
+            transform: scale(1.2);
+        }
+
+        .timeline-item.highlight::before {
+            background: var(--electric-green);
+            border-color: var(--electric-green);
+            box-shadow: 0 0 20px var(--electric-green);
+            animation: pulse 1s infinite;
+        }
+
+        .timeline-date {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--electric-green);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--highlight-gold);
+            font-size: 1.1rem;
+            margin: 8px 0;
+            font-weight: 700;
+        }
+
+        .timeline-desc {
+            color: var(--echo-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Redacted text effect */
+        .redacted {
+            background: var(--echo-text);
+            color: transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .redacted:hover {
+            background: transparent;
+            color: var(--electric-green);
+        }
+
+        /* Links section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, rgba(0,255,65,0.05), rgba(0,0,0,0.3));
+            border: 1px solid rgba(0,255,65,0.2);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(0,255,65,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+
+        .link-card:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .link-card:hover {
+            border-color: var(--electric-green);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,255,65,0.15);
+        }
+
+        .link-card h4 {
+            color: var(--electric-green);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-card span {
+            color: var(--dim-text);
+            font-size: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Chart section */
+        .chart-section {
+            background: var(--hidden-gray);
+            border: 1px solid var(--tint-gray);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .chart-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--tint-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--highlight-gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .chart-live {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--electric-green);
+        }
+
+        .chart-live::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--electric-green);
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+
+        .chart-embed {
+            height: 500px;
+        }
+
+        .chart-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Hidden message section - only visible if you scroll here */
+        .hidden-section {
+            opacity: 0.1;
+            transition: opacity 0.5s;
+            text-align: center;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .hidden-section:hover {
+            opacity: 1;
+        }
+
+        .hidden-section p {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--dim-text);
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--tint-gray);
+            position: relative;
+        }
+
+        .footer-symbol {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .footer-text {
+            color: var(--dim-text);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-secret {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--deep-void);
+            margin-top: 30px;
+            transition: color 0.5s;
+            cursor: default;
+        }
+
+        .footer-secret:hover {
+            color: var(--terminal-red);
+        }
+
+        /* Copy notification */
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--electric-green);
+            color: black;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 9999;
+        }
+
+        .copy-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Easter egg: Konami code activated state */
+        body.konami-activated {
+            animation: rainbow 2s infinite;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .logo { font-size: 1.3rem; }
+            .gate-title { font-size: 1.8rem; }
+            .classified-stamp { font-size: 2.5rem; padding: 10px 30px; }
+            .welcome-title { font-size: 2rem; }
+            .requirement-card { padding: 30px 20px; }
+            .evidence-board { padding: 25px 20px; }
+            .timeline::before { left: 20px; }
+            .timeline-item { padding-left: 60px; }
+            .timeline-item::before { left: 11px; }
+        }
+
+        /* Print easter egg */
+        @media print {
+            body::after {
+                content: 'Nice try. The truth cannot be printed.';
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3rem;
+                color: black;
+            }
+            * { visibility: hidden; }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+
+    <div class="particles" id="particles"></div>
+
+    <svg class="conspiracy-web" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- The web of connections -->
+        <g filter="url(#glow)" stroke="#ff2a2a" stroke-width="1" fill="none">
+            <path d="M100,100 Q250,200 400,150 T700,200 T900,100" />
+            <path d="M50,300 Q200,400 350,350 T650,400 T950,300" />
+            <path d="M100,500 Q300,600 500,550 T800,600 T900,500" />
+            <path d="M150,700 Q350,800 550,750 T850,800" />
+            <line x1="100" y1="100" x2="350" y2="350" />
+            <line x1="400" y1="150" x2="500" y2="550" />
+            <line x1="700" y1="200" x2="650" y2="400" />
+            <line x1="900" y1="100" x2="850" y2="800" />
+            <line x1="350" y1="350" x2="550" y2="750" />
+            <!-- Hidden: These coordinates spell something -->
+            <circle cx="420" cy="130" r="5" fill="#ff2a2a" />
+            <circle cx="690" cy="210" r="5" fill="#ff2a2a" />
+            <circle cx="340" cy="360" r="5" fill="#ff2a2a" />
+            <circle cx="510" cy="560" r="5" fill="#ff2a2a" />
+        </g>
+    </svg>
+
+    <div class="container">
+        <header>
+            <div class="logo" id="logo" onclick="this.classList.toggle('clicked')">
+                <div class="logo-text">BARKING $BP</div>
+                <div class="logo-sub">SECTOR 7-G CLEARANCE REQUIRED</div>
+                <div class="logo-secret">// Keith → Kevin. Cat → Dog. Wall St. → Blockchain.</div>
+            </div>
+            <button id="connect-btn">INITIALIZE CONNECTION</button>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-dot red"></span>
+                <span>NETWORK: SOLANA MAINNET</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot gold"></span>
+                <span>PROTOCOL: ACTIVE</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot green"></span>
+                <span id="block-status">BLOCK: SYNCING...</span>
+            </div>
+        </div>
+
+        <div id="status"></div>
+
+        <!-- ========== GATE SCREEN ========== -->
+        <div id="gate-screen">
+            <div class="classified-container">
+                <div class="classified-stamp">CLASSIFIED</div>
+            </div>
+
+            <h1 class="gate-title">THERE ARE NO COINCIDENCES</h1>
+
+            <p class="gate-subtitle">
+                This terminal is restricted to verified $BP holders.
+                Initialize wallet connection to authenticate your clearance level
+                and access the evidence archive.
+            </p>
+
+            <!-- Cipher that decodes on hover -->
+            <div class="cipher-text" title="Hover to decode">
+                48 45 20 49 53 20 4E 4F 54 20 41 20 43 41 54
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-label">// AUTHENTICATION TOKEN</div>
+                <div class="contract-address" id="contract-copy" title="Click to copy">
+                    3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump
+                </div>
+                <div class="min-amount">MINIMUM: 1 $BP</div>
+            </div>
+
+            <div class="arrow-hint">
+                ↓ CONNECT WALLET TO PROCEED ↓
+            </div>
+
+            <!-- Debug test button -->
+            <div style="margin-top: 30px; padding: 20px; border: 1px dashed #333; border-radius: 8px;">
+                <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">Debug: Test balance check directly</p>
+                <input type="text" id="test-wallet" placeholder="Enter wallet address" value="D3rRjSC83NkXvUiJBiqL9Aqzcq4mEFkYJxdpqEwtp6Tp" style="width: 100%; padding: 10px; background: #111; border: 1px solid #333; color: #0f0; font-family: monospace; font-size: 0.8rem; border-radius: 4px;">
+                <button id="test-btn" style="margin-top: 10px; padding: 10px 20px; background: #333; border: 1px solid #666; color: #fff; cursor: pointer; border-radius: 4px;">Test Balance Check</button>
+                <div id="test-result" style="margin-top: 10px; padding: 10px; font-family: monospace; font-size: 0.8rem; color: #888;"></div>
+            </div>
+        </div>
+
+        <!-- ========== GATED CONTENT ========== -->
+        <div id="gated-content">
+            <div class="welcome-section">
+                <h1 class="welcome-title">ACCESS GRANTED</h1>
+                <p class="balance-display">HOLDINGS: <span id="user-balance">0</span> $BP</p>
+                <p class="access-level">CLEARANCE LEVEL: <span>INNER CIRCLE</span></p>
+            </div>
+
+            <div class="quote-section">
+                <p class="quote-text">
+                    "I am <span>not</span> a cat. I am <span>not</span> a dog.<br>
+                    I am whatever the <span class="redacted" title="hover to reveal">market</span> needs me to be."
+                </p>
+                <p class="quote-author">— Anonymous, 2024</p>
+            </div>
+
+            <!-- Evidence Board -->
+            <div class="evidence-board">
+                <div class="board-header">
+                    <span class="board-icon">🔍</span>
+                    <div>
+                        <h2 class="board-title">THE EVIDENCE</h2>
+                        <p class="board-subtitle">Connecting the dots others refuse to see</p>
+                    </div>
+                </div>
+
+                <div class="evidence-grid">
+                    <div class="evidence-card" data-connects="true">
+                        <span class="evidence-number">#001</span>
+                        <h3>THE INSTAGRAM UPDATE</h3>
+                        <p>Kevin Gill updated his Instagram bio to include a direct link to X account <span class="redacted">@BPuppy80020</span>. First public breadcrumb.</p>
+                        <span class="evidence-date">📅 1 WEEK AGO</span>
+                    </div>
+
+                    <div class="evidence-card" data-connects="true">
+                        <span class="evidence-number">#002</span>
+                        <h3>THE MASK REVELATION</h3>
+                        <p>Posted cryptic image: man holding puppy mask. Direct callback to RK's masked video style. The message is clear.</p>
+                        <span class="evidence-date">📅 TODAY</span>
+                    </div>
+
+                    <div class="evidence-card" data-connects="true">
+                        <span class="evidence-number">#003</span>
+                        <h3>THE NAME CIPHER</h3>
+                        <p><strong>Roaring KITTY</strong> → <strong>Barking PUPPY</strong><br>
+                        Cat → Dog. Roar → Bark. The inversion is intentional. Mirror protocol activated.</p>
+                        <span class="evidence-date">📅 PATTERN IDENTIFIED</span>
+                    </div>
+
+                    <div class="evidence-card">
+                        <span class="evidence-number">#004</span>
+                        <h3>THE COMMUNICATION STYLE</h3>
+                        <p>Cryptic posts. Hidden meanings. Breadcrumbs for those paying attention. Same playbook. <span class="redacted">Same family.</span></p>
+                        <span class="evidence-date">📅 ONGOING ANALYSIS</span>
+                    </div>
+
+                    <div class="evidence-card">
+                        <span class="evidence-number">#005</span>
+                        <h3>THE TIMING</h3>
+                        <p>Activity begins exactly when markets need a catalyst. RK went silent. BP emerged. Coincidence? <span class="redacted">We don't believe in those.</span></p>
+                        <span class="evidence-date">📅 SYNCHRONIZED</span>
+                    </div>
+
+                    <div class="evidence-card">
+                        <span class="evidence-number">#006</span>
+                        <h3>THE BLOCKCHAIN MIGRATION</h3>
+                        <p>Wall Street → Crypto. Centralized → Decentralized. The evolution was always the plan. <span class="redacted">They can't stop what's coming.</span></p>
+                        <span class="evidence-date">📅 PHASE 2 INITIATED</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="evidence-board">
+                <div class="board-header">
+                    <span class="board-icon">⏱️</span>
+                    <div>
+                        <h2 class="board-title">TIMELINE OF EVENTS</h2>
+                        <p class="board-subtitle">The sequence that changed everything</p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">JANUARY 28, 2021</div>
+                        <div class="timeline-title">THE DAY THEY TURNED OFF THE BUY BUTTON</div>
+                        <div class="timeline-desc">Wall Street showed its hand. The game was exposed. DFV held. <span class="redacted">We remember.</span></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-title">THE RETURN OF ROARING KITTY</div>
+                        <div class="timeline-desc">Cryptic videos flood the internet. Markets move on single posts. The legend reminds the world he never left.</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1 WEEK AGO</div>
+                        <div class="timeline-title">KEVIN GILL UPDATES INSTAGRAM</div>
+                        <div class="timeline-desc">Bio updated. @BPuppy80020 linked. The brother enters the arena. Phase 2 begins.</div>
+                    </div>
+
+                    <div class="timeline-item highlight">
+                        <div class="timeline-date">TODAY</div>
+                        <div class="timeline-title">THE PUPPY MASK POST</div>
+                        <div class="timeline-desc">The mask is shown. The signal is sent. Those who know, know.</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">? ? ?</div>
+                        <div class="timeline-title">WHAT COMES NEXT</div>
+                        <div class="timeline-desc">Watch <span class="redacted">@TheRoaringKitty</span> for the signal. The dots connect when they need to.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intel Sources -->
+            <div class="evidence-board">
+                <div class="board-header">
+                    <span class="board-icon">📡</span>
+                    <div>
+                        <h2 class="board-title">INTELLIGENCE SOURCES</h2>
+                        <p class="board-subtitle">Monitor these channels for signals</p>
+                    </div>
+                </div>
+
+                <div class="links-grid">
+                    <a href="https://x.com/TheRoaringKitty" target="_blank" rel="noopener" class="link-card">
+                        <h4>@TheRoaringKitty</h4>
+                        <span>THE ORIGINAL</span>
+                    </a>
+                    <a href="https://x.com/BPuppy80020" target="_blank" rel="noopener" class="link-card">
+                        <h4>@BPuppy80020</h4>
+                        <span>KEVIN'S SIGNAL</span>
+                    </a>
+                    <a href="https://x.com/whysopepe/status/2015747308265390578" target="_blank" rel="noopener" class="link-card">
+                        <h4>ORIGINAL THREAD</h4>
+                        <span>THE DISCOVERY</span>
+                    </a>
+                    <a href="https://pump.fun/coin/3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump" target="_blank" rel="noopener" class="link-card">
+                        <h4>PUMP.FUN</h4>
+                        <span>ACQUIRE $BP</span>
+                    </a>
+                    <a href="https://dexscreener.com/solana/3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump" target="_blank" rel="noopener" class="link-card">
+                        <h4>DEX SCREENER</h4>
+                        <span>LIVE CHART</span>
+                    </a>
+                    <a href="https://solscan.io/token/3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump" target="_blank" rel="noopener" class="link-card">
+                        <h4>SOLSCAN</h4>
+                        <span>ON-CHAIN DATA</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Live Chart -->
+            <div class="chart-section">
+                <div class="chart-header">
+                    <h3 class="chart-title">$BP LIVE CHART</h3>
+                    <div class="chart-live">LIVE DATA FEED</div>
+                </div>
+                <div class="chart-embed">
+                    <iframe
+                        src="https://dexscreener.com/solana/3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump?embed=1&theme=dark&trades=0&info=0"
+                        loading="lazy"
+                        title="$BP Chart"
+                    ></iframe>
+                </div>
+            </div>
+
+            <!-- Hidden section -->
+            <div class="hidden-section">
+                <p>You scrolled far enough to find this.</p>
+                <p style="margin-top: 10px;">The last four digits of the contract address are "pump".</p>
+                <p style="margin-top: 10px;">pump → hype → momentum → movement</p>
+                <p style="margin-top: 10px; color: var(--terminal-red);">Nothing is by accident.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-symbol">🐕 ← 🐱</div>
+            <p class="footer-text">THERE ARE NO COINCIDENCES. CONNECT THE DOTS.</p>
+            <p class="footer-text" style="color: var(--terminal-red);">
+                <a href="https://x.com/TheRoaringKitty" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                    [ FOLLOW THE SIGNAL ]
+                </a>
+            </p>
+            <!-- Hidden: select this text -->
+            <p class="footer-secret" title="Why are you inspecting this?">
+                01000100 01000110 01010110 // The legend never dies. Diamond hands. Forever.
+            </p>
+        </footer>
+    </div>
+
+    <div class="copy-toast" id="copy-toast">Contract address copied!</div>
+
+    <script>
+        /*
+         * =====================================================
+         *
+         *   "I like the stock." - DFV
+         *   "I like the dog."  - ???
+         *
+         *   If you're reading this, you're early.
+         *   The cat became a dog.
+         *   The dog will become a wolf.
+         *
+         *   GME: 01/28/2021
+         *   AMC: 06/02/2021
+         *   PUPPY: ???
+         *
+         *   WAGMI. Diamond hands. Forever.
+         *
+         * =====================================================
+         */
+
+        // Configuration - the numbers mean something
+        const TOKEN_MINT = '3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump';
+        const MIN_BALANCE = 1; // One is all you need
+        // Phantom's public RPC that allows CORS
+        const RPC_URLS = [
+            'https://solana-mainnet.phantom.app/YBPpkkN4g91xDiAnTE9r0RcMkjg0sKUIWvAfoFVJ',
+            'https://api.mainnet-beta.solana.com'
+        ];
+        let RPC_URL = RPC_URLS[0];
+
+        // Easter egg: Special date reference (GME squeeze)
+        const SIGNAL_DATE = new Date('2021-01-28');
+        const DAYS_SINCE = Math.floor((new Date() - SIGNAL_DATE) / (1000 * 60 * 60 * 24));
+
+        // DOM elements
+        const connectBtn = document.getElementById('connect-btn');
+        const gateScreen = document.getElementById('gate-screen');
+        const gatedContent = document.getElementById('gated-content');
+        const statusEl = document.getElementById('status');
+        const userBalanceEl = document.getElementById('user-balance');
+        const blockStatus = document.getElementById('block-status');
+        const copyToast = document.getElementById('copy-toast');
+
+        let connectedWallet = null;
+
+        // Generate floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            // 42 particles - the answer to everything
+            for (let i = 0; i < 42; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Update block status with real data
+        async function updateBlockStatus() {
+            for (const rpcUrl of RPC_URLS) {
+                try {
+                    const response = await fetch(rpcUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            jsonrpc: '2.0',
+                            id: 1,
+                            method: 'getSlot'
+                        })
+                    });
+                    if (!response.ok) continue;
+                    const data = await response.json();
+                    if (data.result) {
+                        blockStatus.textContent = `BLOCK: ${data.result.toLocaleString()}`;
+                        return;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+            blockStatus.textContent = 'BLOCK: OFFLINE';
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            statusEl.textContent = message;
+            statusEl.className = type;
+        }
+
+        // Get wallet provider - check multiple possible locations
+        function getProvider() {
+            // Check for Phantom in various locations
+            if (window.phantom?.solana?.isPhantom) {
+                return window.phantom.solana;
+            }
+            if (window.solana?.isPhantom) {
+                return window.solana;
+            }
+            // Check for Solflare
+            if (window.solflare?.isSolflare) {
+                return window.solflare;
+            }
+            // Generic solana provider
+            if (window.solana) {
+                return window.solana;
+            }
+            return null;
+        }
+
+        // Check token balance - $BP uses Token-2022 program
+        async function checkTokenBalance(walletAddress) {
+            const TOKEN_2022_PROGRAM = 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb';
+
+            const body = {
+                jsonrpc: '2.0',
+                id: 1,
+                method: 'getTokenAccountsByOwner',
+                params: [
+                    walletAddress,
+                    { programId: TOKEN_2022_PROGRAM },
+                    { encoding: 'jsonParsed' }
+                ]
+            };
+
+            // Try each RPC until one works
+            for (const rpcUrl of RPC_URLS) {
+                try {
+                    console.log('%cTrying RPC: ' + rpcUrl.split('?')[0], 'color: #888;');
+
+                    const response = await fetch(rpcUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(body)
+                    });
+
+                    if (!response.ok) {
+                        console.log('%cRPC returned ' + response.status + ', trying next...', 'color: #ffd700;');
+                        continue;
+                    }
+
+                    const data = await response.json();
+
+                    if (data.error) {
+                        console.log('%cRPC error: ' + data.error.message + ', trying next...', 'color: #ffd700;');
+                        continue;
+                    }
+
+                    console.log('%cRPC success!', 'color: #00ff41;');
+
+                    if (data.result?.value) {
+                        // Find our specific token mint
+                        for (const account of data.result.value) {
+                            const info = account.account.data.parsed.info;
+                            if (info.mint === TOKEN_MINT) {
+                                const balance = parseFloat(info.tokenAmount.uiAmountString);
+                                console.log('%c$BP found! Balance: ' + balance, 'color: #00ff41; font-weight: bold;');
+                                RPC_URL = rpcUrl; // Remember working RPC
+                                return balance;
+                            }
+                        }
+                        console.log('%c$BP mint not found in ' + data.result.value.length + ' Token-2022 accounts', 'color: #ff2a2a;');
+                        return 0;
+                    }
+
+                    return 0;
+                } catch (err) {
+                    console.log('%cRPC failed: ' + err.message + ', trying next...', 'color: #ffd700;');
+                    continue;
+                }
+            }
+
+            console.error('%cAll RPCs failed!', 'color: #ff2a2a;');
+            return 0;
+        }
+
+        // Connect wallet
+        async function connectWallet() {
+            // Wait a moment for wallet to be injected if page just loaded
+            await new Promise(resolve => setTimeout(resolve, 100));
+
+            const provider = getProvider();
+
+            if (!provider) {
+                // Check if opened as local file
+                if (window.location.protocol === 'file:') {
+                    showStatus('Wallets don\'t work on file:// - run a local server (python3 -m http.server)', 'error');
+                    console.log('%c⚠️ File protocol detected', 'color: #ff2a2a;');
+                    console.log('Run: cd ' + window.location.pathname.replace(/\/[^/]*$/, '') + ' && python3 -m http.server 8000');
+                    console.log('Then visit: http://localhost:8000');
+                } else {
+                    showStatus('No Solana wallet detected. Install Phantom or Solflare.', 'error');
+                    console.log('%c⚠️ No wallet detected', 'color: #ffd700;');
+                    console.log('Install Phantom: https://phantom.app/');
+                    console.log('Install Solflare: https://solflare.com/');
+                }
+                return;
+            }
+
+            try {
+                showStatus('Initializing secure connection...', 'success');
+                connectBtn.textContent = 'CONNECTING...';
+
+                const resp = await provider.connect();
+                connectedWallet = resp.publicKey.toString();
+
+                connectBtn.textContent = connectedWallet.slice(0, 4) + '...' + connectedWallet.slice(-4);
+                connectBtn.classList.add('connected');
+
+                showStatus('Verifying clearance level...', 'success');
+                console.log('%cChecking balance for: ' + connectedWallet, 'color: #888;');
+                console.log('%cToken mint: ' + TOKEN_MINT, 'color: #888;');
+
+                const balance = await checkTokenBalance(connectedWallet);
+                console.log('%cBalance found: ' + balance, 'color: #ffd700;');
+
+                if (balance >= MIN_BALANCE) {
+                    userBalanceEl.textContent = balance.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                    gateScreen.style.display = 'none';
+                    gatedContent.classList.add('visible');
+                    showStatus(`Access granted. Welcome to the inner circle.`, 'success');
+
+                    // Console easter egg for those who look
+                    console.log('%c🐕 ACCESS GRANTED 🐕', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+                    console.log('%cYou hold ' + balance.toLocaleString() + ' $BP', 'color: #00ff41;');
+                    console.log('%cDays since the squeeze: ' + DAYS_SINCE, 'color: #ff2a2a;');
+                    console.log('%c"I am not a cat." - DFV', 'color: #888; font-style: italic;');
+                    console.log('%c"I am not a dog." - ???', 'color: #888; font-style: italic;');
+
+                    setTimeout(() => { statusEl.style.display = 'none'; }, 3000);
+                } else {
+                    showStatus(`Access denied. You need at least 1 $BP. You have: ${balance.toFixed(2)}`, 'error');
+
+                    // Console message for non-holders
+                    console.log('%c⛔ ACCESS DENIED', 'color: #ff2a2a; font-size: 16px;');
+                    console.log('%cAcquire $BP to proceed: https://pump.fun/coin/3B1ijcocM5EDga6XxQ7JLW7weocQPWWjuhBYG8Vepump', 'color: #888;');
+                }
+
+            } catch (err) {
+                console.error(err);
+                showStatus('Connection failed: ' + err.message, 'error');
+                connectBtn.textContent = 'INITIALIZE CONNECTION';
+            }
+        }
+
+        // Copy contract address
+        document.getElementById('contract-copy')?.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(TOKEN_MINT);
+                copyToast.classList.add('show');
+                setTimeout(() => copyToast.classList.remove('show'), 2000);
+            } catch (e) {
+                console.error('Copy failed:', e);
+            }
+        });
+
+        // Disconnect handler
+        function setupDisconnectHandler() {
+            const provider = getProvider();
+            if (provider && provider.on) {
+                provider.on('disconnect', () => {
+                    connectedWallet = null;
+                    connectBtn.textContent = 'INITIALIZE CONNECTION';
+                    connectBtn.classList.remove('connected');
+                    gateScreen.style.display = 'flex';
+                    gatedContent.classList.remove('visible');
+                    statusEl.style.display = 'none';
+                });
+
+                provider.on('accountChanged', async (publicKey) => {
+                    if (publicKey) {
+                        connectedWallet = publicKey.toString();
+                        connectBtn.textContent = connectedWallet.slice(0, 4) + '...' + connectedWallet.slice(-4);
+                        const balance = await checkTokenBalance(connectedWallet);
+                        if (balance >= MIN_BALANCE) {
+                            userBalanceEl.textContent = balance.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                            gateScreen.style.display = 'none';
+                            gatedContent.classList.add('visible');
+                        } else {
+                            gateScreen.style.display = 'flex';
+                            gatedContent.classList.remove('visible');
+                            showStatus(`Access denied. You need at least 1 $BP. You have: ${balance.toFixed(2)}`, 'error');
+                        }
+                    } else {
+                        // Disconnected
+                        connectedWallet = null;
+                        connectBtn.textContent = 'INITIALIZE CONNECTION';
+                        connectBtn.classList.remove('connected');
+                        gateScreen.style.display = 'flex';
+                        gatedContent.classList.remove('visible');
+                    }
+                });
+            }
+        }
+
+        // Konami code easter egg
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.classList.add('konami-activated');
+                    console.log('%c🎮 KONAMI CODE ACTIVATED 🎮', 'color: #ff00ff; font-size: 24px;');
+                    console.log('%cYou found the secret. Diamond hands forever. 💎🙌', 'color: #00ffff; font-size: 14px;');
+
+                    // Show hidden message
+                    alert('🐕 SECRET UNLOCKED 🐕\n\n"The game never stopped. We just changed the board."\n\nDiamond hands. Forever.');
+
+                    setTimeout(() => {
+                        document.body.classList.remove('konami-activated');
+                    }, 10000);
+
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Secret: typing "DFV" triggers console message
+        let secretBuffer = '';
+        document.addEventListener('keypress', (e) => {
+            secretBuffer += e.key.toUpperCase();
+            if (secretBuffer.includes('DFV')) {
+                console.log('%c💎 DEEP FUCKING VALUE 💎', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+                console.log('%c"What\'s an exit strategy?"', 'color: #00ff41; font-style: italic;');
+                secretBuffer = '';
+            }
+            if (secretBuffer.length > 10) secretBuffer = secretBuffer.slice(-10);
+        });
+
+        // Debug test button
+        document.getElementById('test-btn')?.addEventListener('click', async () => {
+            const wallet = document.getElementById('test-wallet').value.trim();
+            const resultEl = document.getElementById('test-result');
+
+            if (!wallet) {
+                resultEl.textContent = 'Enter a wallet address';
+                resultEl.style.color = '#ff2a2a';
+                return;
+            }
+
+            resultEl.textContent = 'Testing...';
+            resultEl.style.color = '#888';
+
+            try {
+                const balance = await checkTokenBalance(wallet);
+                if (balance > 0) {
+                    resultEl.innerHTML = `<span style="color: #00ff41;">SUCCESS! Found ${balance} $BP</span>`;
+                } else {
+                    resultEl.innerHTML = `<span style="color: #ff2a2a;">No $BP found for this wallet</span>`;
+                }
+            } catch (err) {
+                resultEl.innerHTML = `<span style="color: #ff2a2a;">Error: ${err.message}</span>`;
+            }
+        });
+
+        // Initialize
+        connectBtn.addEventListener('click', connectWallet);
+        createParticles();
+        updateBlockStatus();
+        setInterval(updateBlockStatus, 30000);
+
+        // Wait for wallet to be injected before setting up handlers
+        setTimeout(() => {
+            setupDisconnectHandler();
+        }, 500);
+
+        // Console welcome message
+        console.log('%c' + `
+        ╔══════════════════════════════════════════════╗
+        ║                                              ║
+        ║   🐕 BARKING $BP TERMINAL 🐕              ║
+        ║                                              ║
+        ║   You're looking in the right place.        ║
+        ║   But are you looking deep enough?          ║
+        ║                                              ║
+        ║   Hint: Try the Konami code.                ║
+        ║   Hint: Type "DFV" anywhere.                ║
+        ║   Hint: ${DAYS_SINCE} days since 01/28/2021             ║
+        ║                                              ║
+        ║   There are no coincidences.                ║
+        ║                                              ║
+        ╚══════════════════════════════════════════════╝
+        `, 'color: #ff2a2a; font-family: monospace;');
+
+        // Auto-connect if previously authorized
+        window.addEventListener('load', async () => {
+            // Give wallet extension time to inject
+            await new Promise(resolve => setTimeout(resolve, 300));
+
+            const provider = getProvider();
+            if (provider && provider.connect) {
+                try {
+                    const resp = await provider.connect({ onlyIfTrusted: true });
+                    if (resp && resp.publicKey) {
+                        connectedWallet = resp.publicKey.toString();
+                        connectBtn.textContent = connectedWallet.slice(0, 4) + '...' + connectedWallet.slice(-4);
+                        connectBtn.classList.add('connected');
+
+                        const balance = await checkTokenBalance(connectedWallet);
+                        if (balance >= MIN_BALANCE) {
+                            userBalanceEl.textContent = balance.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                            gateScreen.style.display = 'none';
+                            gatedContent.classList.add('visible');
+                        }
+                    }
+                } catch (err) {
+                    // Not previously connected, that's fine
+                }
+            }
+        });
+
+        /*
+         * Final secret: The first letter of each CSS variable name spells:
+         * T-H-E-R-E-T-R-U-T-H-I-S-H-I-D-D-E-N
+         * "THERE TRUTH IS HIDDEN" (or "THE RETRUTH IS HIDDEN")
+         *
+         * The truth is always there for those who look.
+         */
+    </script>
+</body>
+</html>
